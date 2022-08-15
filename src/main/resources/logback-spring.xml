@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <include resource="org/springframework/boot/logging/logback/defaults.xml" />
+
+    <property name="CONSOLE_LOG_PATTERN"
+              value="[%d{yyyy-MM-dd HH:mm:ss.SSS}][%-5p][%-60.60c{60}][%thread][%X{ipAddress}] %m%n" />
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <charset>UTF-8</charset>
+            <pattern>${CONSOLE_LOG_PATTERN}</pattern>
+        </encoder>
+    </appender>
+    <root level="INFO">
+        <springProfile name="localhost">
+            <appender-ref ref="CONSOLE" />
+        </springProfile>
+    </root>
+    <logger name="com.example" level="DEBUG" additivity="false">
+        <springProfile name="localhost">
+            <appender-ref ref="CONSOLE" />
+        </springProfile>
+    </logger>
+</configuration>
