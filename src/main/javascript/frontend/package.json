@@ -9,7 +9,7 @@
     "preview": "nuxt preview"
   },
   "devDependencies": {
-    "nuxt": "3.0.0-rc.8"
+    "nuxt": "3.0.0-rc.10"
   },
   "dependencies": {
     "cpx": "^1.5.0"
